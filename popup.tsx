@@ -2,7 +2,10 @@ import { useFirebase } from "~firebase/hook"
 
 export default function IndexPopup() {
   const { user, isLoading, onLogin, onLogout } = useFirebase()
-
+  const getTokenId = async () => {
+    console.log(await user.getIdToken());
+  }
+  getTokenId();
   return (
     <div
       style={{
